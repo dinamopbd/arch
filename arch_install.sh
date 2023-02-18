@@ -13,6 +13,7 @@ BBLUE='\e[34m'
 BGREEN='\e[92m'
 BYELLOW='\e[93m'
 RESET='\e[0m'
+TIMEZONE=America/El_Salvador
 
 # Functions
 info_print() {
@@ -244,7 +245,7 @@ info_print "Configuring the system (timezone, system clock, initramfs, Snapper, 
 arch-chroot /mnt /bin/bash -e <<EOF
 
 # Setting up timezone
-ln -sf /usr/share/zoneinfo/$(curl -s http://ip-api.com/line?fields=timezone) /etc/localtime
+ln -sf /usr/share/zoneinfo/$TIMEZONE /etc/localtime
 
 # Setting up clock
 hwclock --systohc
