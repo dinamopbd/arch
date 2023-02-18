@@ -145,7 +145,7 @@ wipefs -af "$DRIVE"
 sgdisk -Zo "$DRIVE"
 
 # Creating a new partition scheme.
-info_print "Creating the partitions on $DISK..."
+info_print "Creating the partitions on $DRIVE"
 parted -s "$DRIVE" \
   mklabel gpt \
   mkpart ESP fat32 1MiB 513MiB \
